@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CubeSpawner : MonoBehaviour
 {
+    private const float HalfSize = 2.0f;
+
     [SerializeField] private Cube _cubeSample;
     [SerializeField] private BoxCollider _collider;
 
@@ -53,9 +55,9 @@ public class CubeSpawner : MonoBehaviour
         var center = collider.bounds.center;
         var size = collider.bounds.size;
 
-        float randomX = Random.Range(-size.x / 2f, size.x / 2f);
-        float randomY = Random.Range(-size.y / 2f, size.y / 2f);
-        float randomZ = Random.Range(-size.z / 2f, size.z / 2f);
+        float randomX = Random.Range(-size.x / HalfSize, size.x / HalfSize);
+        float randomY = Random.Range(-size.y / HalfSize, size.y / HalfSize);
+        float randomZ = Random.Range(-size.z / HalfSize, size.z / HalfSize);
 
         return center + new Vector3(randomX, randomY, randomZ);
     }
