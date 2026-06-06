@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 937047061371998031}
   - component: {fileID: 8539708841992515937}
   - component: {fileID: 8897062757907624272}
-  - component: {fileID: 3459887350962016431}
+  - component: {fileID: 7373766911891214248}
   - component: {fileID: 6523666878541871110}
   - component: {fileID: 9204677531104690690}
   - component: {fileID: 3375315209445847704}
@@ -177,7 +177,8 @@ MonoBehaviour:
   _localScaleModificator: {fileID: 9204677531104690690}
   _colorModificator: {fileID: 3375315209445847704}
   _scatteringEffect: {fileID: 8897062757907624272}
-  _shakingEffect: {fileID: 3459887350962016431}
+  _shakingEffect: {fileID: 0}
+  _explosionEffect: {fileID: 7373766911891214248}
 --- !u!114 &8897062757907624272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 937047061371998031}
   _impulse: 15
---- !u!114 &3459887350962016431
+--- !u!114 &7373766911891214248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,11 +202,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 664059899368808527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b9199983f802074ca2f1268eb5f11ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 308f99180b3da9c4cb813d9238ce6101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 937047061371998031}
-  _impulse: 2.5
+  _localScaleModificator: {fileID: 9204677531104690690}
+  _upwardModifier: 0.5
+  _impulseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 10
+      inSlope: -4
+      outSlope: -4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2
+      value: 2
+      inSlope: -4
+      outSlope: -4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _radiusCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 15
+      inSlope: -6
+      outSlope: -6
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2
+      value: 3
+      inSlope: -6
+      outSlope: -6
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &6523666878541871110
 MonoBehaviour:
   m_ObjectHideFlags: 0

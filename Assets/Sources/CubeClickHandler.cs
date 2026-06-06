@@ -36,6 +36,7 @@ public class CubeClickHandler : MonoBehaviour
         else
         {
             instance.OnReplicationFailed();
+            _cubeSpawner.Destroy(instance);
         }
     }
 }

@@ -7,7 +7,7 @@ public class Cube : MonoBehaviour
     [SerializeField] private ColorModificator _colorModificator;
     
     [SerializeField] private ScatteringEffect _scatteringEffect;
-    [SerializeField] private ShakingEffect _shakingEffect;
+    [SerializeField] private ExplosionEffect _explosionEffect;
 
     public bool CanReplicate()
     {
@@ -25,6 +25,6 @@ public class Cube : MonoBehaviour
 
     public void OnReplicationFailed()
     {
-        _shakingEffect.Shake();
+        _explosionEffect.Explode();
     }
 }
